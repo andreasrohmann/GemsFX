@@ -33,17 +33,17 @@ public class TemplatePane extends Control {
 	private final ObservableMap<Position, Tile> tilesMap = FXCollections.observableHashMap();
 
 	public final Tile setNode(Position pos, Node node) {
-                Tile tile = tilesMap.get(pos);
-                if (node!=null) {
-            	        tile.setNode(node);
-                        getChildren().add(node);
-                        node.setManaged(false);
-                } else {
-                        tile.setVisible(false);
-                        getChildren().remove(tile.getNode());
-                        tile.setNode(null);
-                }
-                return tile;
+		Tile tile = tilesMap.get(pos);
+		if (node!=null) {
+			tile.setNode(node);
+			getChildren().add(node);
+			node.setManaged(false);
+		} else {
+			tile.setVisible(false);
+			getChildren().remove(tile.getNode());
+			tile.setNode(null);
+		}
+		return tile;
 	}
 
 	public final Node getNode(Position pos) {
